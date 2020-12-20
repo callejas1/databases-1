@@ -66,3 +66,5 @@ createQuery(
 );
 
 connection.end();
+
+connection.end();
