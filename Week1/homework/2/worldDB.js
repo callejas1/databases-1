@@ -64,7 +64,7 @@ world_DB(
 // 7- Population of Rotterdam
 world_DB(
   'What is the population of Rotterdam?',
-  'SELECT name FROM country WHERE Population > 8000000',
+  "SELECT name, population FROM city WHERE city.name = 'Rotterdam'",
 );
 
 // 8- Top 10 countries by Surface Area
