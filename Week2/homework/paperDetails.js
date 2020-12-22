@@ -1,0 +1,36 @@
+'use strict';
+
+const papersTableData = [
+  [1, 'Criminal Of Twilight', 'Room 101', '2020-12-12'],
+  [2, 'Hawk With Wings', 'Room 102', '2020-12-12'],
+  [3, 'Rebels Of Destruction', 'Room 103', '2020-12-12'],
+  [4, 'Armies Of Wood', 'Room 104', '2020-12-12'],
+  [5, 'Lords And Horses', 'Room 105', '2020-12-12'],
+  [6, 'Kings And Heroes', 'Room 106', '2020-12-12'],
+  [7, 'Border Of Fire', 'Room 107', '2020-12-12'],
+  [8, 'Blacksmiths And Inventors', 'Room 108', '2020-12-12'],
+  [9, 'RebelsRuins Of The Stockades', 'Room 109', '2020-12-12'],
+  [10, 'RebelsVengeance With Money', 'Room 110', '2020-12-12'],
+  [11, 'Admiring The Forest', 'Room 111', '2020-12-12'],
+  [12, 'Numb To The Commander', 'Room 112', '2020-12-12'],
+  [13, 'Phantom Of The Shield', 'Room 113', '2020-12-12'],
+  [14, 'Thief Of The World', 'Room 114', '2020-12-12'],
+  [15, 'Trees Of Freedom', 'Room 115', '2020-12-12'],
+  [16, 'Dwelling In The Future', 'Room 116', '2020-12-12'],
+  [17, 'Abandoned By The White Smoke', 'Room 117', '2020-12-12'],
+  [18, 'Nightmares In My Yard', 'Room 118', '2020-12-12'],
+  [19, 'Paradox From Beyond The Grave', 'Room 119', '2020-12-12'],
+  [20, 'Owls And Hunters', 'Room 120', '2020-12-12'],
+  [21, 'Help Of A Shadow', 'Room 121', '2020-12-12'],
+  [22, 'Loyal To History', 'Room 122', '2020-12-12'],
+  [23, 'Vultures And Trees', 'Room 123', '2020-12-12'],
+  [24, 'Rats And Spiders', 'Room 124', '2020-12-12'],
+  [25, 'Riddle Of The Mountain', 'Room 125', '2020-12-12'],
+  [26, 'Fantasy Of The Lake', 'Room 126', '2020-12-12'],
+  [27, 'Dreams In The Mountains', 'Room 127', '2020-12-12'],
+  [28, 'Disguised By My Home', 'Room 128', '2020-12-12'],
+  [29, 'City Of The Sun', 'Room 129', '2020-12-12'],
+  [30, 'Doctors In My Village', 'Room 130', '2020-12-12'],
+];
+
+module.exports = papersTableData;
