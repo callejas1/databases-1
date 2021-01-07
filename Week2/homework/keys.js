@@ -31,15 +31,12 @@ create_query('CREATE DATABASE IF NOT EXISTS author_info');
 create_query('USE author_info');
 
 create_query(
-  "CREATE TABLE IF NOT EXISTS authors (author_no INT, author_name VARCHAR(50), university VARCHAR(100), date_of_birth DATE, h_index INT, gender ENUM('m','f'), CONSTRAINT pk_author PRIMARY KEY(author_no))",
+  "CREATE TABLE IF NOT EXISTS authors (author_no INT AUTO_INCREMENT, author_name VARCHAR(50), university VARCHAR(100), date_of_birth DATE, h_index INT, gender ENUM('m','f'), CONSTRAINT pk_author PRIMARY KEY(author_no))",
 );
 
-// Add column to hold foreign key
-create_query('ALTER TABLE authors ADD collaborator INT');
-
-// Set foreign key
+// Add column to hold foreign key (& set FK)
 create_query(
-  'ALTER TABLE authors ADD CONSTRAINT fk_author FOREIGN KEY (collaborator) REFERENCES authors(author_no)',
+  'ALTER TABLE authors ADD collaborator INT, ADD CONSTRAINT fk_author FOREIGN KEY (collaborator) REFERENCES authors(author_no)',
 );
 
 connection.end();
