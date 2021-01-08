@@ -61,6 +61,8 @@ connection.query(insertResearchDetails, [papersTableData], (error, results) => {
   console.log('Paper data inserted');
 });
 
+createQuery('SET FOREIGN_KEY_CHECKS=1;');
+
 // Insert data into papers_details table
 const insertPaperDetails = `INSERT INTO papers_details (author_no, paper_id) VALUES ?`;
 

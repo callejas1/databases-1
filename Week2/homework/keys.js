@@ -39,4 +39,6 @@ create_query(
   'ALTER TABLE authors ADD collaborator INT, ADD CONSTRAINT fk_author FOREIGN KEY (collaborator) REFERENCES authors(author_no)',
 );
 
+create_query('SET FOREIGN_KEY_CHECKS=0;');
+
 connection.end();

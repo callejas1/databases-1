@@ -26,7 +26,7 @@ const getAuthorInfo = (query) => {
 };
 
 getAuthorInfo(
-  'SELECT a.author_name AS author, b.collaborator FROM authors a, authors b WHERE a.author_no = b.collaborator;',
+  'SELECT a.author_name AS author, b.author_name AS collaborator FROM authors a, authors b WHERE b.author_no = a.collaborator;',
 );
 
 getAuthorInfo(
