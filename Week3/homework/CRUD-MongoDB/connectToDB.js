@@ -32,6 +32,7 @@ MongoClient.connect(url, { useUnifiedTopology: true }, async (err, client) => {
       `Documents added: ${insertCity.insertedCount} (${insertCity.ops[0].Name})`,
     );
 
+    // Update records
     const updatePopulation = await hometownCollection.updateOne(
       { Name: 'Chinandega' },
       {
@@ -42,7 +43,7 @@ MongoClient.connect(url, { useUnifiedTopology: true }, async (err, client) => {
     );
     console.log(`Documents updated: ${updatePopulation.modifiedCount}`);
 
-    // Read the record
+    // Read records
     const readByCity = await hometownCollection.findOne({
       Name: 'Chinandega',
     });
