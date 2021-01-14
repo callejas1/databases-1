@@ -41,6 +41,8 @@ createQuery(
   'CREATE TABLE IF NOT EXISTS papers_details (author_no INT, paper_id INT, CONSTRAINT fk_auth FOREIGN KEY (author_no) REFERENCES authors(author_no), CONSTRAINT fk_paper FOREIGN KEY (paper_id) REFERENCES research_papers(paper_id))',
 );
 
+createQuery('SET FOREIGN_KEY_CHECKS=0;');
+
 // Insert data into authors table: https://www.npmjs.com/package/mysql#escaping-query-values
 const insertAuthors = `INSERT INTO authors (author_no, author_name, university, date_of_birth, h_index, gender, collaborator) VALUES ?`;
 
@@ -72,6 +74,8 @@ connection.query(insertPaperDetails, [collaboratorsArray], (error, results) => {
   }
   console.log('Additional table data inserted');
 });
+
+createQuery('SET FOREIGN_KEY_CHECKS=1;');
 
 // End connection
 connection.end();
