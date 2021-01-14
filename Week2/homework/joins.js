@@ -26,11 +26,11 @@ const getAuthorInfo = (query) => {
 };
 
 getAuthorInfo(
-  'SELECT a.author_name AS author, b.author_name AS collaborator FROM authors a, authors b WHERE b.author_no = a.collaborator;',
+  'SELECT a.author_name AS author, b.author_name as collaborator FROM authors a JOIN authors b ON b.author_no = a.collaborator;',
 );
 
 getAuthorInfo(
-  'SELECT authors.author_no, author_name, university, date_of_birth, h_index, gender, collaborator, research_papers.paper_title FROM authors JOIN papers_details ON authors.author_no = papers_details.author_no JOIN research_papers ON papers_details.paper_id = research_papers.paper_id;',
+  'SELECT authors.*, research_papers.paper_title FROM authors JOIN papers_details ON authors.author_no = papers_details.author_no JOIN research_papers ON papers_details.paper_id = research_papers.paper_id;',
 );
 
 // End connection
