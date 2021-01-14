@@ -26,12 +26,12 @@ const aggregateFunctions = (query) => {
 
 // All research papers and the number of authors that wrote that paper.
 aggregateFunctions(
-  'SELECT research_papers.paper_id, COUNT(author_name) FROM research_papers JOIN papers_details ON papers_details.paper_id = research_papers.paper_id JOIN authors ON authors.author_no = papers_details.author_no GROUP BY paper_id',
+  'SELECT research_papers.paper_id, COUNT(author_name) FROM research_papers JOIN papers_details ON papers_details.paper_id = research_papers.paper_id JOIN authors ON authors.author_no = papers_details.author_no GROUP BY paper_id;',
 );
 
 // Sum of the research papers published by all female authors.
 aggregateFunctions(
-  "SELECT COUNT(paper_title) FROM research_papers JOIN papers_details ON papers_details.paper_id = research_papers.paper_id JOIN authors on papers_details.author_no = authors.author_no WHERE authors.gender = 'f';",
+  "SELECT COUNT(paper_title) AS papers_by_female_authors FROM research_papers JOIN papers_details ON papers_details.paper_id = research_papers.paper_id JOIN authors on papers_details.author_no = authors.author_no WHERE authors.gender = 'f';",
 );
 
 // Average of the h-index of all authors per university.
@@ -46,7 +46,7 @@ aggregateFunctions(
 
 // Minimum and maximum of the h-index of all authors per university.
 aggregateFunctions(
-  'SELECT university, MAX(h_index) AS Max, MIN(h_index) AS Min FROM authors GROUP BY university',
+  'SELECT university, MAX(h_index) AS Max, MIN(h_index) AS Min FROM authors GROUP BY university;',
 );
 
 // End connection
