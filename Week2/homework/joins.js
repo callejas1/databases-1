@@ -30,7 +30,7 @@ getAuthorInfo(
 );
 
 getAuthorInfo(
-  'SELECT authors.*, research_papers.paper_title FROM authors JOIN papers_details ON authors.author_no = papers_details.author_no JOIN research_papers ON papers_details.paper_id = research_papers.paper_id;',
+  'SELECT authors.*, research_papers.paper_id FROM authors LEFT JOIN papers_details ON authors.author_no = papers_details.author_no LEFT JOIN research_papers ON papers_details.paper_id = research_papers.paper_id GROUP BY authors.author_no, research_papers.paper_id;',
 );
 
 // End connection
