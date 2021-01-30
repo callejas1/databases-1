@@ -41,9 +41,9 @@ conn.connect((error) => {
 
 // Rewrite the function so that it is no longer vulnerable to SQL injection
 // https://github.com/mysqljs/mysql#preparing-queries
-function getPopulation(Country, name, code, cb) {
+function getPopulation(name, code, cb) {
   conn.query(
-    `SELECT Population FROM ${Country} WHERE Name = ? and code = ?`,
+    `SELECT Population FROM Country WHERE Name = ? and code = ?`,
     [name, code],
     (err, result) => {
       if (err) {
@@ -57,7 +57,7 @@ function getPopulation(Country, name, code, cb) {
   );
 }
 
-getPopulation('Country', 'Nicaragua', 'NIC', (e, results) => {
+getPopulation('Nicaragua', 'NIC', (e, results) => {
   if (e) throw e;
   console.log(`Population: ${results}`);
 });
