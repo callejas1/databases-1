@@ -39,9 +39,9 @@ conn.connect((error) => {
 //   console.log(`Population: ${result}`);
 // });
 
-Rewrite the function so that it is no longer vulnerable to SQL injection
-https://github.com/mysqljs/mysql#preparing-queries
-function getPopulation(name, code, cb) {
+// Rewrite the function so that it is no longer vulnerable to SQL injection
+//github.com/mysqljs/mysql#preparing-queries
+https: function getPopulation(name, code, cb) {
   conn.query(
     'SELECT Population FROM Country WHERE Name = ? and code = ?',
     [name, code],
