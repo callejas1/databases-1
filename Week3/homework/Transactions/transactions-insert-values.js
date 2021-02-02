@@ -16,8 +16,8 @@ const accountInfo = [
 ];
 
 const transferDetails = [
-  [201, 101, 0, '2021-01-11', 'Tuition Fee'],
-  [202, 102, 0, '2021-01-11', 'Tuition Fee'],
+  [101, 0, '2021-01-11', 'Tuition Fee'],
+  [102, 0, '2021-01-11', 'Tuition Fee'],
 ];
 
 // Insert sample data
@@ -30,7 +30,7 @@ connection.query(insertAccountDetails, [accountInfo], (error, results) => {
   console.log('Account details added successfully');
 });
 
-const logMoneyTransfer = `INSERT IGNORE INTO account_changes(change_number, account_number, amount, changed_date, remark) VALUES ?`;
+const logMoneyTransfer = `INSERT IGNORE INTO account_changes(account_number, amount, changed_date, remark) VALUES ?`;
 
 connection.query(logMoneyTransfer, [transferDetails], (error, results) => {
   if (error) {

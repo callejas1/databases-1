@@ -36,7 +36,7 @@ createQuery(
 );
 
 createQuery(
-  'CREATE TABLE IF NOT EXISTS account_changes(change_number int Primary Key, account_number int, CONSTRAINT fk_acct_no Foreign Key(account_number) REFERENCES account(account_number), amount FLOAT, changed_date DATE, remark VARCHAR(250))',
+  'CREATE TABLE IF NOT EXISTS account_changes(change_number int IDENTITY(1,1) Primary Key, account_number int, CONSTRAINT fk_acct_no Foreign Key(account_number) REFERENCES account(account_number), amount FLOAT, changed_date DATE, remark VARCHAR(250))',
 );
 
 connection.end();

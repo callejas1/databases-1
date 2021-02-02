@@ -21,10 +21,10 @@ async function logMoneyTransfer() {
       'UPDATE account SET account_balance = account_balance + 1000 WHERE account_number = 102;',
     );
     await conn(
-      "UPDATE account_changes SET amount = -1000, changed_date = '2021-01-12', remark = 'Tuition Fee' WHERE change_number = 201;",
+      "INSERT INTO account_changes(account_number, amount, changed_date, remark) VALUES(101, -1000, '2021-01-11', 'Tuition Fee');",
     );
     await conn(
-      "UPDATE account_changes SET amount = 1000, changed_date = '2021-01-12', remark = 'Tuition Fee' WHERE change_number = 202;",
+      "INSERT INTO account_changes(account_number, amount, changed_date, remark) VALUES(102, 1000, '2021-01-12', 'Tuition Fee');",
     );
     await conn('COMMIT;');
 
